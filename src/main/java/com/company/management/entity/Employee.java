@@ -2,8 +2,13 @@ package com.company.management.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
-
+import lombok.*;
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
