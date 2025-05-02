@@ -33,7 +33,7 @@ public class EmployeeController {
 
     @GetMapping
     public Page<Employee> getAll(@PageableDefault(size = 10) Pageable pageable) {
-        return service.getAllEmployees(pageable);  // ✔ Match signature
+        return service.getAllEmployees(pageable);
     }
 
     @PutMapping("/{id}")

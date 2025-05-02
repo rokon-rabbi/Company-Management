@@ -1,5 +1,6 @@
 package com.company.management.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +20,8 @@ public class Department {
 
     private String name;
     private String location;
-    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Employee> employees = new ArrayList<>();
+    @OneToMany(mappedBy = "department")
+    @JsonManagedReference
+    private List<Employee> employees;
 }
 

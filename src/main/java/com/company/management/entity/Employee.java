@@ -1,5 +1,6 @@
 package com.company.management.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
@@ -22,8 +23,7 @@ public class Employee {
     @Positive(message = "Salary must be positive")
     private Double salary;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-
-    @JoinColumn(name = "department_id")
+    @ManyToOne
+    @JsonBackReference
     private Department department;
 }

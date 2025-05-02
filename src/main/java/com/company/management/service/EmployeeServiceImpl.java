@@ -6,6 +6,7 @@ import com.company.management.exception.DuplicateEmailException;
 import com.company.management.exception.ResourceNotFoundException;
 import com.company.management.repository.DepartmentRepository;
 import com.company.management.repository.EmployeeRepository;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import org.springframework.data.domain.Pageable;
@@ -42,8 +43,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> getAllEmployees(Pageable pageable) {
-        return employeeRepository.findAll(pageable).getContent();
+    public Page<Employee> getAllEmployees(Pageable pageable) {
+        return employeeRepository.findAll(pageable);
     }
 
     @Override
